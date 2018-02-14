@@ -20,6 +20,21 @@ app.get('/companies', (req, res) => {
   res.json({ name: req.query.name })
 })
 
+app.get('/emanuel', (req, res) => {
+  const mesagges = {
+   msg:"Mi nombre es Emanuel"
+  }
+  res.json(mesagges)
+})
+
+app.get('/emanuel/:visita', (req, res) => {
+  const saludo = "Hola " + req.params.visita + " !!"
+  const mesagges = {
+   msg:saludo + "Mi nombre es Emanuel"
+  }
+  res.json(mesagges)
+})
+
 app.listen(3005, () => {
   console.log('Server running on port 3005')
 })
