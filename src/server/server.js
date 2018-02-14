@@ -33,6 +33,16 @@ app.get('/emanuel/:visita', (req, res) => {
    msg:saludo + "Mi nombre es Emanuel"
   }
   res.json(mesagges)
+app.get('/brayan', (req, res) => {
+  res.json({ name: 'Brayan', username: 'bingtrav'})
+})
+
+app.get('/myselfP/:name/:username', (req, res) => {
+  res.json({ name: req.params.name, username: req.params.username})
+})
+
+app.get('/myselfQ', (req, res) => {
+  res.json({ name: req.query.name, username: req.query.username})
 })
 
 app.listen(3005, () => {
